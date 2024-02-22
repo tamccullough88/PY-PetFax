@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>PetFax</title>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+
+<body>
+    <h1>{{title}}</h1>
+    {% for pet in pets %}
+    <h2> {{ pet.pet_name }}</h2>
+    <h3> {{ pet.pet_fact }}</h3>
+    <img src="{{pet.pet_photo}}" alt="photo of pet" />
+    {% endfor %}
+
+</body>
+
+</html>
