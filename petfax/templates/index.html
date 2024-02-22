@@ -1,21 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-<title>PetFax</title>
+
 
 <head>
+    <title>PetFax</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 
 <body>
     <h1>{{title}}</h1>
-    {% for pet in pets %}
-    <h2> {{ pet.pet_name }}</h2>
-    <h3> {{ pet.pet_fact }}</h3>
-    <img src="{{pet.pet_photo}}" alt="photo of pet" />
-    {% endfor %}
-
+    <div class="callout">
+        <div class="pets-container">
+            {% for pet in pets %}
+            <div vlass="pets">
+                <h2> {{ pet.pet_name }}</h2>
+                <img src="{{pet.pet_photo}}" alt="photo of pet" />
+                <a href="/pets/{{ pet.pet_id }}">Learn more</a>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
 </body>
 
 </html>

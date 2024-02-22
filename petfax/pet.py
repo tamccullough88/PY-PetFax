@@ -16,3 +16,9 @@ def index():
         'index.html', 
         title = "This Is PetFax",
         pets=pets)
+
+# show route
+@bp.route('/<int:id>')
+def show(id): 
+    pet = pets[id - 1]
+    return render_template('show.html', pet=pet)
